@@ -13,3 +13,4 @@ RUN echo $(curl -s https://storage.googleapis.com/kubernetes-release/release/sta
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(cat stable.txt)/bin/linux/amd64/kubectl"
 RUN mv kubectl /usr/local/bin
 RUN chmod 755 /usr/local/bin/kfctl /usr/local/bin/kubectl
+RUN python3 -m pip install kfp kfp-server-api --upgrade
