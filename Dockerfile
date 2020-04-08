@@ -1,4 +1,4 @@
-FROM marketplace.gcr.io/google/centos7
+FROM gcr.io/cloud-builders/gcloud
 WORKDIR /
 RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
     grep browser_download | \
