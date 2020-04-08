@@ -1,5 +1,6 @@
 FROM gcr.io/cloud-builders/gcloud
 WORKDIR /
+RUN gcloud components update --quiet
 RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
     grep browser_download | \
     grep linux | \
