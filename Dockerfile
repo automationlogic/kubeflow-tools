@@ -1,5 +1,7 @@
 FROM gcr.io/cloud-builders/gcloud
 WORKDIR /
+RUN apt-get install python3-pip
+RUN pip3 install kfp kfp-server-api --upgrade
 RUN gcloud components update --quiet
 RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
     grep browser_download | \
@@ -13,4 +15,3 @@ RUN echo $(curl -s https://storage.googleapis.com/kubernetes-release/release/sta
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(cat stable.txt)/bin/linux/amd64/kubectl"
 RUN mv kubectl /usr/local/bin
 RUN chmod 755 /usr/local/bin/kfctl /usr/local/bin/kubectl
-RUN pip3 install kfp kfp-server-api --upgrade
