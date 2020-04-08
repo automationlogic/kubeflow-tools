@@ -11,3 +11,4 @@ RUN rm kfctl_*_linux.tar.gz
 RUN echo $(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt) > stable.txt
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(cat stable.txt)/bin/linux/amd64/kubectl"
 RUN mv kubectl /usr/local/bin
+RUN chmod 755 /usr/local/bin/kfctl /usr/local/bin/kubectl
