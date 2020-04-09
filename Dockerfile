@@ -2,6 +2,7 @@ FROM gcr.io/cloud-builders/gcloud
 WORKDIR /
 RUN gcloud components update --quiet
 RUN apt-get update && apt-get install python3 python3-pip -y
+RUN pip3 install kfp kfp-server-api --upgrade
 RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
     grep browser_download | \
     grep linux | \
@@ -10,4 +11,4 @@ RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
 RUN tar -zvxf kfctl_*_linux.tar.gz
 RUN mv kfctl /usr/local/bin
 RUN rm kfctl_*_linux.tar.gz
-RUN chmod 755 /usr/local/bin/kfctl /usr/local/bin/kubectl
+RUN chmod 755 /usr/local/bin/kfctl /usr/local/bin/kfp
