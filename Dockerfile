@@ -1,6 +1,6 @@
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:latest
 WORKDIR /
-RUN gcloud components update --quiet
+#RUN gcloud components update --quiet
 RUN apt-get update && apt-get install python3-pip -y
 RUN pip3 install kfp kfp-server-api --upgrade
 RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
