@@ -1,7 +1,5 @@
 FROM gcr.io/cloud-builders/gcloud
 WORKDIR /
-RUN apt-get install python3-pip
-RUN pip3 install kfp kfp-server-api --upgrade
 RUN gcloud components update --quiet
 RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
     grep browser_download | \
