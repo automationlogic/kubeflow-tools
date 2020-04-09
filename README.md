@@ -4,6 +4,6 @@ Climate Analytics - Build Kubeflow Tools image
 
 ## Tools
 
-This repository builds an image with two cli  tools used in conjunction with Kubeflow:
+This repository builds an image with cli  tools and libraries that can be used with Kubeflow:
 * kfctl (the Kubeflow cli)
-* kubectl (the Kubernetes cli)
+* kfp (the Kubeflow python library)
