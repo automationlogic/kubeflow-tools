@@ -1,6 +1,6 @@
-# kubeflow-tools
+# Kubeflow Tools
 
-Climate Analytics - Build Kubeflow Tools image
+Build Kubeflow Tools image
 
 ## Tools
 
