@@ -3,7 +3,7 @@ WORKDIR /
 #RUN gcloud components update --quiet
 RUN apt-get update && apt-get install python3-pip -y
 RUN pip3 install kfp kfp-server-api --upgrade
-RUN curl -s https://api.github.com/repos/kubeflow/kubeflow/releases/latest | \
+RUN curl -s https://api.github.com/repos/kubeflow/kfctl/releases/latest | \
     grep browser_download | \
     grep linux | \
     cut -d '"' -f 4 | \
